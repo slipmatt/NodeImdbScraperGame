@@ -1,0 +1,207 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link href="//netdna.bootstrapcdn.com/font-awesome/3.2.1/css/font-awesome.css" rel="stylesheet">
+  <link rel="stylesheet" href="/stylesheets/theme.css" type="text/css"> </head>
+
+<body class="bg-dark">
+    <div id="wrap">
+            <nav class="navbar navbar-expand-md bg-light navbar-light">
+                    <div class="container">
+                      <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#navbar3SupportedContent">
+                        <span class="navbar-toggler-icon"></span>
+                      </button>
+                      <div class="collapse navbar-collapse text-center justify-content-center" id="navbar3SupportedContent">
+                        <ul class="navbar-nav">
+                          <li class="nav-item">
+                            <a class="nav-link" href="#">
+                              <b>Imdb Scraper Game</b>
+                            </a>
+                          </li>
+                          <li class="nav-item">
+                            <a class="nav-link" href="#">
+                              <b>Multiplayer (meaning 2)</b>
+                            </a>
+                          </li>
+                        </ul>
+                      </div>
+                    </div>
+                  </nav>
+  <div class="py-5 intro bg-dark">
+    <div class="container">
+      <div class="row">
+        <div class=" align-self-center border rounded-right rounded-left" col-md-12="" my-5="" text-center="">
+          
+            <h1 class="display-1">Welcome</h1>
+          
+          <h1 class="display-4">What is this?</h1>
+          <p class="lead">The Imdb Game is a web based game which will allow 2 players to connect and play the game head to head with their knowledge of the imdb top 250</p>
+          <hr/>
+          
+          <h1 class="display-4">Rules</h1>
+          <p class="lead"> The game has 8 rounds, the players will be required to guess the year in which the movie was released, a wrong answer will result in 3 points being deducted and a correct answer results in 5 points being added.
+            <br> The user with the most points wins the game! </p>
+          <br>
+          <a class="ml-3 btn navbar-btn btn-primary text-light text-center" href="#" id="get-started">Play the Game</a>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="py-5 text-white  bg-dark player-info"  style="display:none">
+    <div class="container">
+      <div class="row">
+        <div class="col-md-12  border rounded-right rounded-left">
+          <h1>Welcome to the game</h1>
+          <p>Please enter your name then click on join, once someone else joins, the game will begin</p>
+          <form>
+            <div class="form-group">
+              <label for="InputName">Your name</label>
+              <input type="text" class="form-control" id="player" placeholder="Your name" autofocus=""> </div>
+            <button type="submit" class="btn btn-dark" id="join">Submit</button>
+            <p id="waiting">
+              <i class="icon-cog icon-spin"></i> Waiting for players to join...</p>
+          </form>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="py-5 text-white text-center bg-dark game " style="display:none">
+    <p id="starting" style="display: none">Game is ready! Starting...</p>
+    <div class="container">
+      <div class="row">
+        <div class="col-md-12">
+          <div class="card bg-dark">
+            <ul class="list-group list-group-flush">
+              <li class="list-group-item">
+                <div class="question"></div>
+              </li>
+              <li class="list-group-item">
+                <input type="number" id="year" autofocus="" title="Your Answer" class="form-control"> </li>
+            </ul>
+            <div class="card-body">
+              <button id="answerBtn" class="btn btn-primary" type="button">Answer</button>
+              <div class="waiting-for-player">
+                <p>
+                  <i class="icon-cog icon-spin"></i> Waiting for other player's answer...</p>
+              </div>
+              <div class="row">
+                <br>
+                <div class="score-row row col-md-12">Score:
+                  <span class="score label label-info">0</span>
+                </div>
+                <div class="round-count row col-md-12">
+                  <p>Round 1 of 8</p>
+                </div>
+                <div class="leave-game row col-md-12">
+                  <button id="leave-game" class="btn btn-danger" onclick="location.reload()">Leave Game</button>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="py-5 text-center results bg-dark  border rounded-right rounded-left" style="display:none">
+    <div class="container">
+      <div class="row">
+        <div class="col-md-12">
+          <div class="row">
+            <div class="col-md-12">
+              <h1 class="text-light"> </h1>
+              <h2>Game Over!</h2>
+              <div class="results-success alert alert-success" style="display:none>
+                <i class="icon-trophy icon-2x"></i>
+                <strong>Congratulations!</strong> You win, flawless victory</div>
+              <div class="results-fail alert alert-danger" style="display:none>
+                <i class="icon-thumbs-down icon-2x"></i>
+                <strong>Fail!</strong> Fatality!</div>
+              <div class="results-draw alert alert-info" style="display:none>
+                <i class="icon-meh icon-2x"></i>
+                <strong>Draw!</strong> Game over, double KO, insert coin to continue!</div>
+              <table class="table">
+                <thead>
+                  <tr>
+                    <th width="20%">ID</th>
+                    <th width="50%">Username</th>
+                    <th width="30%">Score</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td>
+                      <span class="stats-me-id"></span>
+                    </td>
+                    <td>
+                      <span class="stats-me-username"></span>
+                    </td>
+                    <td>
+                      <span class="stats-me-score"></span>
+                    </td>
+                  </tr>
+                  <tr>
+                    <td>
+                      <span class="stats-opponent-id"></span>
+                    </td>
+                    <td>
+                      <span class="stats-opponent-username"></span>
+                    </td>
+                    <td>
+                      <span class="stats-opponent-score"></span>
+                    </td>
+                  </tr>
+                </tbody>
+              </table>
+              <div class="retry-game row col-12">
+                <button id="retry" class="btn btn-info" onclick="location.reload()">Play Again?</button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="text-center bg-dark" style="background-image: url(&quot;none&quot;);" id="footer">
+    <div class="container-fluid">
+      <div class="row">
+        <div class="py-3 col-3" style="background-color:#3b5998" >
+          <a href="https://www.facebook.com/imtiaz.buckas" target="_blank"></a>
+            <i class="icon-facebook icon-3x text-white"></i>
+          </a>
+        </div>
+        <div class="py-3 col-3" style="background-color:#24292e">
+          <a href="https://github.com/slipmatt/" target="_blank">
+            <i class="icon-github icon-3x text-white"></i>
+          </a>
+        </div>
+        <div class="py-3 col-3" style="background-color:#F48024">
+          <a href="https://stackoverflow.com/users/2010332/imtiaz-buckas" target="_blank">
+            <i class="text-white icon-stackexchange icon-3x"></i>
+          </a>
+        </div>
+        <div class="py-3 col-3" style="background-color:#004b7c">
+          <a href="https://www.linkedin.com/in/imtiaz-buckas-45682a45/" target="_blank">
+            <i class="icon-linkedin icon-3x text-white"></i>
+          </a>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+  <script src="https://code.jquery.com/jquery-1.10.2.min.js"crossorigin="anonymous"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+    <script src="/socket.io/socket.io.js"></script>
+<!--     <script src="/js/jquery-1.10.2.min.js"></script>
+    <script src="/js/bootstrap.min.js"></script> -->
+    <script src="/js/game.js"></script>
+</body>
+
+</html>

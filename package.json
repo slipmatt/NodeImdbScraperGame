@@ -18,8 +18,9 @@
   },
   "homepage": "https://github.com/slipmatt/NodeImdbScraperGame#readme",
   "dependencies": {
+    "cheerio": "^1.0.0-rc.2",
     "express": "^4.16.3",
-    "node.io": "^0.5.1",
+    "request": "^2.88.0",
     "socket.io": "^2.1.1"
   }
 }

@@ -6196,3 +6196,12 @@ html, body {
   background:black;
   background: -webkit-gradient(radial, 50% 50%, 0, 50% 50%, 350, from(#000), to(#fff));
 }
+
+.logo {
+  background: url('/images/logo2.png') no-repeat center;
+  background-size: contain;
+  display: inline-block;
+  width: 150px;
+  height: 40px;
+  text-indent: -9999px;
+}

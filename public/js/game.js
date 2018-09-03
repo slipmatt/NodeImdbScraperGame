@@ -93,15 +93,12 @@ $(function() {
             }
 
             if (me.score > opponent.score) {
-                // Congrats! You won!
                 $('.results-success').show();
             }
             if (me.score < opponent.score) {
-                // Haha! You lost!
                 $('.results-fail').show();
             }
             if (me.score == opponent.score) {
-                // Lame, you drew
                 $('.results-draw').show();
             }
 
